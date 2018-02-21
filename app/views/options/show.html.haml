@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Parent page:
+  = @option.parent_page_id
+%p
+  %b Child page:
+  = @option.child_page_id
+
+= link_to 'Edit', edit_option_path(@option)
+\|
+= link_to 'Back', options_path
