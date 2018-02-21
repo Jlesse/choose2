@@ -1,0 +1,16 @@
+= form_for @page do |f|
+  - if @page.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@page.errors.count, "error")} prohibited this page from being saved:"
+      %ul
+        - @page.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :author_id
+    = f.number_field :author_id
+  .field
+    = f.label :parent_option_id
+    = f.number_field :parent_option_id
+  .actions
+    = f.submit 'Save'
